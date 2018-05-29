@@ -31,10 +31,10 @@ async def on_message(message):
     allowed = ["308358617458016256", "374071874222686211", "374074135506190349"]
     if message.author.bot:
         return
-    if message.server.id not in allowed:
+    if message.server.id not in allowed and message.author.id != "162780049869635584":
         return
     await bot.process_commands(message)
-
+	
 @bot.command(pass_context=True)
 async def shutdown(ctx):
 
